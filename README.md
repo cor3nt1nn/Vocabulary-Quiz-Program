@@ -51,5 +51,5 @@ python vocabulary_quiz.py
 4. At the end of the quiz, your score will be displayed, and the updated errors will be saved back to the CSV file.
 
 # Contributing
-Contributions are welcome! If you have suggestions for improvements or features, don't be shy to send me a little text at Corentin.BESQUEUT@etu.isima.fr
+Contributions are welcome! If you have suggestions for improvements or features, don't hesitate to reach me out at Corentin.BESQUEUT@etu.isima.fr
 
