@@ -1,6 +1,5 @@
 # Vocabulary Quiz Program
 
-![Presentation_Image](res/readme_image.jpg)
 ## Description
 
 This Python program allows students to test their vocabulary skills by translating words between English and French. The program uses a CSV file to store vocabulary words, including the number of errors made during previous quizzes. Users can choose the direction of translation, select between all available words or a random sample, and keep track of their progress.
