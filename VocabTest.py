@@ -74,8 +74,9 @@ def words_selection(mots, taille):
         return random.sample(mots, taille)
     else:
         print("Tirage pondéré selon le nombre d'erreurs.")
-        mots_pondere = random.choices(mots, weights=[1 + erreurs for _, _, erreurs in mots], k=taille)
-        return mots_pondere
+        mots.sort(key=lambda x: x[2], reverse=True)
+        mots_selectionnes = mots[:taille]
+        return mots_selectionnes
 
 def main():
     filename = input("Entrez le nom du fichier CSV (ex: 'mots.csv') : ")
@@ -86,10 +87,12 @@ def main():
     
     if tout_ou_alea == 'a':
         nb_questions = int(input(f"Combien de mots voulez-vous tester ? (max {len(words)}) "))
-        words = words_selection(words, nb_questions)
-    
-    words = quiz(words, mode)
-    
+        selected_words = words_selection(words, nb_questions)
+        not_selected_words = [word for word in words if word not in selected_words]
+        words = quiz(selected_words, mode)
+        words=words+not_selected_words
+    else:
+        words = quiz(words, mode)
     write_csv(filename, words)
 
 if __name__ == "__main__":
